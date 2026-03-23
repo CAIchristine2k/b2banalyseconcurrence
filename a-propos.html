@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos — Capitaine Tech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .vision-stack { display: flex; flex-direction: column; gap: 2px; }
+    .vision-card { background: var(--bg2); border: 1px solid rgba(255,255,255,0.04); padding: 32px 36px 32px 44px; display: flex; gap: 22px; align-items: flex-start; position: relative; transition: background .2s; }
+    .vision-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--blue-l); opacity: .4; }
+    .vision-card:hover { background: var(--bg3); }
+    .vis-icon { width: 28px; height: 28px; color: var(--blue-l); flex-shrink: 0; margin-top: 3px; }
+    .vis-icon svg { width: 100%; height: 100%; }
+    .vis-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .stats-row { display: flex; gap: 52px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 48px; }
+    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+    .val-card { background: var(--bg2); padding: 40px 28px; border: 1px solid rgba(255,255,255,0.04); transition: background .2s; }
+    .val-card:hover { background: var(--bg3); }
+    .val-icon { width: 36px; height: 36px; color: var(--blue-l); margin-bottom: 20px; }
+    .val-icon svg { width: 100%; height: 100%; }
+    .val-title { font-family: 'Anton', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; color: var(--blue-xl); }
+    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
+    .why-card { background: var(--bg2); padding: 40px; border: 1px solid rgba(255,255,255,0.04); position: relative; overflow: hidden; transition: background .2s; }
+    .why-card:hover { background: var(--bg3); }
+    .why-n { font-family: 'Anton', sans-serif; font-weight: 900; font-size: 72px; color: rgba(74,159,232,0.06); position: absolute; top: 12px; right: 16px; user-select: none; }
+    .why-card h3 { font-size: 19px; margin-bottom: 12px; }
+    .sec-full { background: var(--bg2); border: 1px solid var(--border); padding: 52px; display: flex; align-items: center; gap: 52px; }
+    .sec-full-badge { flex-shrink: 0; }
+    .sec-dots-lg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .sec-dots-lg span { width: 16px; height: 16px; background: var(--red); border-radius: 50%; }
+    .sec-title-lg { font-family: 'Anton', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 3px; text-transform: uppercase; }
+    @media(max-width:900px){ .about-grid{grid-template-columns:1fr;gap:48px;} .values-grid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr;} .sec-full{flex-direction:column;} }
+    @media(max-width:640px){ .values-grid{grid-template-columns:1fr;} .stats-row{gap:28px;flex-wrap:wrap;} }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.jpg" alt="Capitaine Tech"/><span class="nav-logo-text">Capitaine<em>Tech</em></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="nav-dropdown"><a href="services/cameras.html">Services ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="services/cameras.html"><span class="dd-icon" data-icon="camera"></span>Caméras</a>
+          <a href="services/alarmes.html"><span class="dd-icon" data-icon="bell"></span>Alarmes</a>
+          <div class="dd-sep"></div>
+          <a href="services/ecrans-led.html"><span class="dd-icon" data-icon="monitor"></span>Écrans LED</a>
+          <a href="services/sonorisation.html"><span class="dd-icon" data-icon="speaker"></span>Sonorisation</a>
+          <div class="dd-sep"></div>
+          <a href="services/reseaux.html"><span class="dd-icon" data-icon="wifi"></span>Réseaux & Wi-Fi</a>
+          <a href="services/karaoke.html"><span class="dd-icon" data-icon="mic"></span>Karaoké Pro</a>
+        </div>
+      </li>
+      <li><a href="a-propos.html" class="active">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tel:0156964371" class="nav-cta">01.56.96.43.71</a>
+    <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobile-nav">
+  <a href="index.html">Accueil</a>
+  <a href="services/cameras.html"><span class="nm-icon" data-icon="camera"></span>Caméras</a>
+  <a href="services/alarmes.html"><span class="nm-icon" data-icon="bell"></span>Alarmes</a>
+  <a href="services/ecrans-led.html"><span class="nm-icon" data-icon="monitor"></span>Écrans LED</a>
+  <a href="services/sonorisation.html"><span class="nm-icon" data-icon="speaker"></span>Sonorisation</a>
+  <a href="services/reseaux.html"><span class="nm-icon" data-icon="wifi"></span>Réseaux & Wi-Fi</a>
+  <a href="services/karaoke.html"><span class="nm-icon" data-icon="mic"></span>Karaoké Pro</a>
+  <a href="a-propos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero" style="position:relative;z-index:1;">
+  <div class="container">
+    <div class="breadcrumb" style="justify-content:center;"><a href="index.html">Accueil</a><span class="sep">/</span>À propos</div>
+    <div class="tag reveal">Notre histoire</div>
+    <h1 class="reveal">Une vision globale<br>de votre environnement<br><em style="font-style:normal;color:var(--blue-l)">technologique.</em></h1>
+    <p class="reveal">Capitaine Tech est votre partenaire unique pour la conception et l'intégration de systèmes intelligents. Nous transformons vos espaces en environnements sûrs, stables et performants.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="tag">Qui sommes-nous</div>
+        <h2>Intégrateur technologique<br>de confiance.</h2>
+        <p style="margin-top:20px;font-size:16px;">Basés à Bobigny (93), nous intervenons en Île-de-France pour concevoir, installer et maintenir vos systèmes technologiques. Notre approche : une seule entreprise pour tout gérer — audio, vidéo, réseau et sécurité.</p>
+        <p style="margin-top:14px;">Certifiés partenaires Securitas, nous sélectionnons uniquement du matériel professionnel reconnu. Chaque installation est sur mesure, après audit de vos locaux.</p>
+        <div class="stats-row">
+          <div><div class="stat-num" data-counter data-target="5" data-suffix=",0">5,0</div><div class="stat-lbl">Note Google</div></div>
+          <div><div class="stat-num" data-counter data-target="6">6</div><div class="stat-lbl">Expertises</div></div>
+          <div><div class="stat-num">93</div><div class="stat-lbl">Seine-Saint-Denis</div></div>
+        </div>
+      </div>
+      <div class="vision-stack">
+        <div class="vision-card reveal">
+          <div class="vis-icon" data-icon="shield"></div>
+          <div><h3>Sécurité</h3><p>Protéger les biens et les personnes grâce à des systèmes de surveillance et d'alarme performants.</p></div>
+        </div>
+        <div class="vision-card reveal">
+          <div class="vis-icon" data-icon="wifi"></div>
+          <div><h3>Stabilité</h3><p>Assurer une connectivité sans faille pour que votre activité ne soit jamais interrompue.</p></div>
+        </div>
+        <div class="vision-card reveal">
+          <div class="vis-icon" data-icon="monitor"></div>
+          <div><h3>Expérience</h3><p>Créer un impact audiovisuel fort grâce aux écrans LED et aux systèmes de sonorisation haut de gamme.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div class="container">
+    <div class="section-header reveal"><div class="tag">Nos valeurs</div><h2>Intelligent. Intégré. Durable.</h2></div>
+    <div class="values-grid">
+      <div class="val-card reveal"><div class="val-icon" data-icon="check"></div><div class="val-title">Intelligent</div><p>Des systèmes qui s'adaptent à vos usages et évoluent avec votre activité.</p></div>
+      <div class="val-card reveal"><div class="val-icon" data-icon="tool"></div><div class="val-title">Intégré</div><p>Tous vos équipements connectés entre eux pour une gestion unifiée et simplifiée.</p></div>
+      <div class="val-card reveal"><div class="val-icon" data-icon="shield"></div><div class="val-title">Durable</div><p>Matériel professionnel sélectionné pour sa fiabilité sur le long terme, avec SAV réactif.</p></div>
+      <div class="val-card reveal"><div class="val-icon" data-icon="pin"></div><div class="val-title">Proximité</div><p>Équipe basée à Bobigny, disponible rapidement pour installation et SAV.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header reveal"><div class="tag">Nos atouts</div><h2>Pourquoi choisir<br>Capitaine Tech ?</h2></div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-n">01</div><h3>Guichet Unique</h3><p>Une seule entreprise pour audio, vidéo, réseau et sécurité. Plus simple, plus cohérent.</p></div>
+      <div class="why-card reveal"><div class="why-n">02</div><h3>Approche Sur Mesure</h3><p>Pas de solutions génériques. Chaque installation est conçue après audit sur site.</p></div>
+      <div class="why-card reveal"><div class="why-n">03</div><h3>Matériel Professionnel</h3><p>Sélection rigoureuse d'équipements fiables et durables auprès de fournisseurs certifiés.</p></div>
+      <div class="why-card reveal"><div class="why-n">04</div><h3>Réactivité & SAV</h3><p>Équipe locale réactive pour l'installation et le service après-vente. Votre satisfaction prime.</p></div>
+    </div>
+  </div>
+</section>
+
+<section><div class="container">
+  <div class="sec-full reveal">
+    <div class="sec-full-badge"><div class="sec-dots-lg"><span></span><span></span><span></span></div><div class="sec-title-lg">Partenaire<br>de Securitas</div></div>
+    <p style="font-size:16px;max-width:520px;">Capitaine Tech est partenaire certifié de Securitas, leader mondial de la sécurité. Cette certification atteste de notre expertise et de notre engagement envers les plus hauts standards d'installation de systèmes d'alarme et de vidéosurveillance.</p>
+  </div>
+</div></section>
+
+<footer style="position:relative;z-index:1;">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap"><img src="assets/logo.jpg" alt="Capitaine Tech"/><span class="footer-logo-text">Capitaine<em>Tech</em></span></div>
+        <p>Intégrateur de solutions technologiques clé en main à Bobigny.</p>
+        <div class="sec-badge"><div class="sec-dots"><span></span><span></span><span></span></div>Partenaire de Securitas</div>
+      </div>
+      <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="services/cameras.html">Caméras</a></li><li><a href="services/alarmes.html">Alarmes</a></li><li><a href="services/ecrans-led.html">Écrans LED</a></li><li><a href="services/sonorisation.html">Sonorisation</a></li><li><a href="services/reseaux.html">Réseaux & Wi-Fi</a></li><li><a href="services/karaoke.html">Karaoké Pro</a></li></ul></div>
+      <div><div class="footer-col-title">Entreprise</div><ul class="footer-links"><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="info-row"><div class="info-ico" data-icon="pin"></div><div><div class="info-lbl">Adresse</div><div class="info-val">39 Rue Henri Gautier, Bobigny</div></div></div>
+        <div class="info-row"><div class="info-ico" data-icon="phone"></div><div><div class="info-lbl">Tél</div><div class="info-val"><a href="tel:0156964371">01.56.96.43.71</a></div></div></div>
+        <div class="info-row"><div class="info-ico" data-icon="clock"></div><div><div class="info-lbl">Horaires</div><div class="info-val">Lun – Sam : 9h – 18h</div></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 Capitaine Tech · 93000 Bobigny</div><div class="footer-rating"><span class="stars">★★★★★</span><span class="rating-txt">5,0 sur Google</span></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
