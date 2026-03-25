@@ -5,33 +5,45 @@
   <title>À propos — Capitaine Tech</title>
   <link rel="stylesheet" href="css/style.css"/>
   <style>
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .vision-stack { display: flex; flex-direction: column; gap: 2px; }
-    .vision-card { background: var(--bg2); border: 1px solid rgba(255,255,255,0.04); padding: 32px 36px 32px 44px; display: flex; gap: 22px; align-items: flex-start; position: relative; transition: background .2s; }
-    .vision-card::before { content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--blue-l); opacity: .4; }
-    .vision-card:hover { background: var(--bg3); }
-    .vis-icon { width: 28px; height: 28px; color: var(--blue-l); flex-shrink: 0; margin-top: 3px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .vision-stack { display: flex; flex-direction: column; gap: 16px; }
+    .vision-card { background: var(--bg2); border: 1px solid rgba(0,102,204,0.1); border-radius: var(--r); padding: 28px 32px 28px 36px; display: flex; gap: 18px; align-items: flex-start; position: relative; transition: border-color .2s, box-shadow .2s; }
+    .vision-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--cyan); opacity: .4; border-radius: 3px 0 0 3px; }
+    .vision-card:hover { border-color: rgba(0,102,204,0.25); box-shadow: 0 8px 24px rgba(0,102,204,0.06); }
+    .vis-icon { width: 26px; height: 26px; color: var(--cyan); flex-shrink: 0; margin-top: 3px; }
     .vis-icon svg { width: 100%; height: 100%; }
-    .vis-card h3 { font-size: 18px; margin-bottom: 8px; }
-    .stats-row { display: flex; gap: 52px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 48px; }
-    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
-    .val-card { background: var(--bg2); padding: 40px 28px; border: 1px solid rgba(255,255,255,0.04); transition: background .2s; }
-    .val-card:hover { background: var(--bg3); }
-    .val-icon { width: 36px; height: 36px; color: var(--blue-l); margin-bottom: 20px; }
+    .vis-card h3 { font-size: 17px; margin-bottom: 6px; }
+    .stats-row { display: flex; gap: 40px; padding-top: 36px; border-top: 1px solid rgba(0,102,204,0.1); margin-top: 36px; flex-wrap: wrap; }
+    .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .val-card { background: var(--bg-card); padding: 36px 24px; border: 1px solid rgba(0,102,204,0.1); border-radius: var(--r); transition: border-color .2s, box-shadow .2s, transform .3s var(--ease); }
+    .val-card:hover { border-color: rgba(0,102,204,0.25); box-shadow: 0 8px 24px rgba(0,102,204,0.06); transform: translateY(-4px); }
+    .val-icon { width: 32px; height: 32px; color: var(--cyan); margin-bottom: 18px; }
     .val-icon svg { width: 100%; height: 100%; }
-    .val-title { font-family: 'Anton', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; color: var(--blue-xl); }
-    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; }
-    .why-card { background: var(--bg2); padding: 40px; border: 1px solid rgba(255,255,255,0.04); position: relative; overflow: hidden; transition: background .2s; }
-    .why-card:hover { background: var(--bg3); }
-    .why-n { font-family: 'Anton', sans-serif; font-weight: 900; font-size: 72px; color: rgba(74,159,232,0.06); position: absolute; top: 12px; right: 16px; user-select: none; }
-    .why-card h3 { font-size: 19px; margin-bottom: 12px; }
-    .sec-full { background: var(--bg2); border: 1px solid var(--border); padding: 52px; display: flex; align-items: center; gap: 52px; }
+    .val-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0; text-transform: none; margin-bottom: 10px; color: #0a0f1e; }
+    .why-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .why-card { background: var(--bg-card); padding: 32px; border: 1px solid rgba(0,102,204,0.1); border-radius: var(--r); position: relative; overflow: hidden; transition: border-color .2s, box-shadow .2s, transform .3s var(--ease); }
+    .why-card:hover { border-color: rgba(0,102,204,0.25); box-shadow: 0 8px 24px rgba(0,102,204,0.06); transform: translateY(-4px); }
+    .why-n { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 64px; color: rgba(0,102,204,0.05); position: absolute; top: 10px; right: 14px; user-select: none; line-height: 1; }
+    .why-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+    .sec-full { background: var(--bg2); border: 1px solid rgba(0,102,204,0.12); border-radius: var(--r); padding: 48px; display: flex; align-items: center; gap: 48px; }
     .sec-full-badge { flex-shrink: 0; }
     .sec-dots-lg { display: flex; gap: 8px; margin-bottom: 12px; }
-    .sec-dots-lg span { width: 16px; height: 16px; background: var(--red); border-radius: 50%; }
-    .sec-title-lg { font-family: 'Anton', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: 3px; text-transform: uppercase; }
-    @media(max-width:900px){ .about-grid{grid-template-columns:1fr;gap:48px;} .values-grid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr;} .sec-full{flex-direction:column;} }
-    @media(max-width:640px){ .values-grid{grid-template-columns:1fr;} .stats-row{gap:28px;flex-wrap:wrap;} }
+    .sec-dots-lg span { width: 14px; height: 14px; background: var(--red); border-radius: 50%; }
+    .sec-title-lg { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 1px; text-transform: uppercase; color: #0a0f1e; }
+    @media(max-width:900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .values-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .why-grid { grid-template-columns: 1fr; gap: 14px; }
+      .sec-full { flex-direction: column; padding: 36px; gap: 28px; text-align: center; }
+    }
+    @media(max-width:640px) {
+      .values-grid { grid-template-columns: 1fr; gap: 12px; }
+      .val-card { padding: 28px 20px; }
+      .stats-row { gap: 24px; }
+      .why-card { padding: 26px 22px; }
+      .sec-full { padding: 28px 20px; }
+      .sec-title-lg { font-size: 22px; }
+    }
   </style>
 </head>
 <body>
@@ -75,7 +87,7 @@
   <div class="container">
     <div class="breadcrumb" style="justify-content:center;"><a href="index.html">Accueil</a><span class="sep">/</span>À propos</div>
     <div class="tag reveal">Notre histoire</div>
-    <h1 class="reveal">Une vision globale<br>de votre environnement<br><em style="font-style:normal;color:var(--blue-l)">technologique.</em></h1>
+    <h1 class="reveal">Une vision globale<br>de votre environnement<br><span class="cyan">technologique.</span></h1>
     <p class="reveal">Capitaine Tech est votre partenaire unique pour la conception et l'intégration de systèmes intelligents. Nous transformons vos espaces en environnements sûrs, stables et performants.</p>
   </div>
 </section>
