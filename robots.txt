@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://capitainetech.ody.app/sitemap.xml
+Sitemap: https://www.capitaineproject.com/sitemap.xml
